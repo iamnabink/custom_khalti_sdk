@@ -15,7 +15,7 @@ typedef KhaltiScopeBuilder = Widget Function(
 /// The widget that initializes Khalti Payment Gateway and handles received deeplink.
 class KhaltiScope {
   /// Launches the Khalti Payment Gateway interface.
-  static Future<void> pay({
+  static Future<dynamic> pay({
     required PaymentConfig config,
     required BuildContext context,
     bool enabledDebugging = false,
@@ -41,5 +41,6 @@ class KhaltiScope {
     } else {
       onCancel?.call();
     }
+    return result;
   }
 }
